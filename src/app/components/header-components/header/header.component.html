@@ -1,0 +1,14 @@
+<div class="menu" >
+  @for(button of headerButtons; track button.name){
+  <div
+    class="menu-item"
+    [ngStyle]="{'color':  button.state === 'active' ? 'red' : ''}"
+    (click)="activateItem($index)"
+    #Item>
+    {{button.name}}</div>
+  }
+
+  @if(activeItem >= 0){
+  <div class="underline" #underline (@trembleAnimation.done)="handleDone()" [@trembleAnimation]="underlineState"></div>
+  }
+</div>
