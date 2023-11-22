@@ -1,0 +1,9 @@
+<div class="wrapper">
+    @for(robot of robots;track robot.id){
+    <app-robot 
+    [robot]="robot"
+    (onDeleteRobot)="handleDeleteRobot($event)"
+    ></app-robot>
+    }
+
+</div>

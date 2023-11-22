@@ -2,13 +2,17 @@
   @for(button of headerButtons; track button.name){
   <div
     class="menu-item"
-    [ngStyle]="{'color':  button.state === 'active' ? 'red' : ''}"
+    [ngClass]="{'menu-item__active': isActive(button.link)}"
     (click)="activateItem($index)"
     #Item>
-    {{button.name}}</div>
+    {{getTranslatedName(button.name)}}
+  </div>
   }
+
 
   @if(activeItem >= 0){
   <div class="underline" #underline (@trembleAnimation.done)="handleDone()" [@trembleAnimation]="underlineState"></div>
   }
+  <app-interface-language-menu></app-interface-language-menu>
 </div>
+

@@ -1,0 +1,11 @@
+<div class="filter__title">
+<div class="filter__buttons buttons ">
+    @for(lang of languages; track lang.id){
+    <button
+        class="button"
+        (click)="handleSelect(lang.id)"
+        [ngClass]="{'button__selected': lang.id === current}">
+        {{lang.label}}
+    </button>
+    }
+</div>

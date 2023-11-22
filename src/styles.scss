@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: gray;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent linear-gradient(27deg, #13f094 0%, #9945ff 100%) 0 0 no-repeat padding-box;
+  }
