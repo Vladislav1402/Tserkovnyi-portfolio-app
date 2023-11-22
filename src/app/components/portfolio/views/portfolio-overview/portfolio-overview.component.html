@@ -1,0 +1,10 @@
+<div class="portfolio-wrapper">
+    <div class="portfolio-list">
+        @for(item of portfolioList;track $index) {
+        <div class="portfolio-items">
+            <span>{{$index + 1}}. </span> 
+            <span class="label"  (click)="handleNavigate(item.link)">{{item.label}}</span>
+        </div>
+        }
+    </div>
+</div>

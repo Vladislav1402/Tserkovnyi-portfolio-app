@@ -1,1 +1,21 @@
-Hey
+    <div class="title">Press 'space' to change colors</div>
+    <div class="wrapper">
+        @for(color of colors;track $index){
+        <div class="col" [ngStyle]="{'background-color': color.label}">
+            <span
+                (click)="copyToClickBoard($index, color.label)"
+                class="text"
+                [ngStyle]="{'color': getTextColor(color.label)}">
+                {{color.label}}
+                <div *ngIf="copiedColors[$index]" class="tooltip">
+                    Copied!
+                </div>
+            </span>
+            <fa-icon
+                (click)="handleTogleLock($index, color.isLocked)"
+                class="icon"
+                [icon]="color.isLocked ? faLock : faLockOpen"
+                [ngStyle]="{'color': getTextColor(color.label)}"></fa-icon>
+        </div>
+        }
+    </div>

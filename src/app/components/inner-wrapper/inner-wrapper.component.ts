@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Header } from '../header-components/header/header.component';
@@ -8,7 +8,7 @@ import { Header } from '../header-components/header/header.component';
     templateUrl: './inner-wrapper.component.html',
     styleUrls: ['./inner-wrapper.component.scss'],
     standalone:true,
-    imports: [Header, RouterModule],
+    imports: [Header, RouterModule, TranslateModule],
 })
 
 export class InnerWrapper implements OnInit {

@@ -1,0 +1,17 @@
+<div class="language-menu__wrapper">
+
+    <button
+        class="language-menu-btn"
+        [ngClass]="{'open': isOpen }"
+        (click)="handleOpen()">
+        {{current | titlecase}}
+    </button>
+
+    <ng-conteiner class="language-menu__bg" [ngClass]="{'open': isOpen }">
+        <lms-interface-language-choice
+                [current]="current"
+                (changed)="onChanged($event)"
+                [languages]="languages">
+        </lms-interface-language-choice>
+    </ng-conteiner>
+</div>

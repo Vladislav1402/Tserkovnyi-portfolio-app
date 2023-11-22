@@ -1,0 +1,17 @@
+:host{
+    .portfolio-wrapper{
+        height: 100%;
+        width: 100%;
+    }
+
+    .portfolio-items{
+        font-size: 20px;
+        font-weight: 700;
+        font-family: sans-serif;
+        cursor: pointer;
+    }
+
+    .label{
+        border-bottom: 1px solid black;
+    }
+}

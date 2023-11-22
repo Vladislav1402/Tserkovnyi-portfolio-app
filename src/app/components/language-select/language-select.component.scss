@@ -1,0 +1,63 @@
+
+:host {
+  .language-menu__wrapper {
+    position: relative;
+    z-index: 10;
+  }
+
+  .language-menu-btn {
+    background-color: #1E1C30;
+    background-position: center;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-family: Aeonik-Medium;
+    font-size: 14px;
+    height: 50px;
+    position: relative;
+    width: 60px;
+    z-index: 4;
+
+    &.open {
+      background-color: #4C4A75;
+    }
+  }
+
+  .language-menu__bg {
+    background-color: #4C4A75;
+    left: 60px;
+    opacity: 0;
+    padding: 20px;
+    position: absolute;
+    pointer-events: none;
+    transition: all 0.3s;
+    transform: translate(-150%, -50%);
+    top: -10%;
+    width: 293px;
+    z-index: 0;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(91deg, #13F094 0%, #7A6CF4 66%, #9945FF 100%);
+    }
+  }
+
+  .language-menu__bg.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-80%, 0);
+  }
+
+  .language-menu__bg.open.aiCoachFullScreen {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(352.5px, 0);
+  }
+}
