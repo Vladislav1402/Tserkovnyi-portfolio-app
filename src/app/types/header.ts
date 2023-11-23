@@ -9,6 +9,19 @@ export interface Robot {
     email: string
 }
 
+export interface Todo {
+  label: string,
+  id: string,
+  isEdit: boolean,
+  isChecked: boolean
+}
+
+export enum FilterEnum {
+  all = 'all',
+  active = 'active',
+  completed = "completed",
+}
+
 export type Language =
   | "en"
   | "es"
@@ -33,4 +46,6 @@ export type Language =
     language: Language;
     isDefault: boolean;
   };
+
+
   

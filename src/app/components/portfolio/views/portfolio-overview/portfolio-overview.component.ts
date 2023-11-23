@@ -14,7 +14,8 @@ export class Portfolio {
 
     portfolioList: any[] = [
         {label: 'Random Colors App', link: 'randomColor'},
-        {label: 'Robot List', link: 'robotList'}
+        {label: 'Robot List', link: 'robotList'},
+        {label: "Todo List", link: 'todo-list' }
     ]
 
     constructor(

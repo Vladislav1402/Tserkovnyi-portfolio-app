@@ -1,0 +1,49 @@
+<div class="wrapper">
+    <div class="header block">
+        Todo List
+    </div>
+    @if(todos.length){
+    @for(todo of filterdTodos(curFilter); track todo.id){
+    @if(!todo.isEdit){
+    <div class="main block" (dblclick)="handleEdit(todo.id)">
+        <input type="checkbox"
+            class="checked"
+            (change)="toggleTodo(todo.id)">
+        <div>{{todo.label}}</div>
+        <button class="delete-btn"
+            (click)="handleDelete(todo.id)">X</button>
+    </div>
+    }@if(todo.isEdit){
+    <input
+        #inputToEdit
+        type="text "
+        class="block input"
+        [(ngModel)]="_editedValue"
+        (keydown.Enter)='handleEnterEdit(todo.id)'>
+    }
+    }
+    }
+
+    <input
+        #input
+        type="text "
+        class="block input"
+        [(ngModel)]="_value"
+        (keydown.Enter)='handleEnter()'>
+    <div class="footer block">
+        <span>
+            <span class="counter">{{activeCounts}}</span>
+            <span>{{countsText}}</span>
+        </span>
+        <span class="filter"
+            [ngClass]="{active:(curFilter) === filterEnum.all}"
+            (click)=" changeFilter(filterEnum.all)">
+            all
+        </span>
+        <span class="filter"
+            [ngClass]="{active:(curFilter) === filterEnum.completed}"
+            (click)=" changeFilter(filterEnum.completed)">
+            completed
+        </span>
+    </div>
+</div>

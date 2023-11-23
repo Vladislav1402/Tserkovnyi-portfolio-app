@@ -2,6 +2,7 @@
     .portfolio-wrapper{
         height: 100%;
         width: 100%;
+        min-width: 1400px;
     }
 
     .portfolio-items{
@@ -9,6 +10,7 @@
         font-weight: 700;
         font-family: sans-serif;
         cursor: pointer;
+        margin-bottom: 20px;
     }
 
     .label{

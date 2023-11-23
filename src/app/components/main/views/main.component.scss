@@ -1,0 +1,205 @@
+:host {
+  // Change the colors
+  $color1: red;
+  $color2: blue;
+
+  .text-effect {
+    overflow: hidden;
+    position: relative;
+    width: 147px;
+    height: 42px;
+    margin-left: 10px;
+    background-color: #000;
+    filter: contrast(110%) brightness(190%);
+  }
+
+  .neon {
+    position: relative;
+    background: black;
+    color: transparent;
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      color: white;
+      filter: blur(0.02em);
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    &::after {
+      mix-blend-mode: difference;
+    }
+  }
+
+  .gradient,
+  .spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .gradient {
+    background: linear-gradient(45deg, $color1, $color2);
+    mix-blend-mode: multiply;
+  }
+
+  .spotlight {
+    animation: light 5s infinite linear;
+    background: radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%,
+      radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
+    top: -100%;
+    left: -100%;
+    mix-blend-mode: color-dodge;
+  }
+
+  @keyframes light {
+    100% {
+      transform: translate3d(50%, 50%, 0);
+    }
+  }
+
+  .neon {
+    font: 700 35px "Lato", sans-serif;
+    //   text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    margin-left: 7px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border: 1px dotted white;
+    }
+  }
+
+  .image {
+    width: 150px;
+  }
+
+  .wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 200px;
+    margin-bottom: 100px;
+  }
+
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 360px;
+  }
+
+  .title {
+    font-family: Aeonik-Bold;
+    font-weight: 800;
+    font-size: 35px;
+  }
+
+  .subtitle {
+    margin-top: 20px;
+    font-family: Aeonik-Regular;
+    color: rgba($color: #000000, $alpha: 0.6);
+  }
+
+  .start {
+    width: 100%;
+  }
+
+  .photo {
+    width: 200px;
+    object-fit: cover;
+    height: 200px;
+  }
+
+  .photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000;
+    background: #bfe2ff;
+    border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+    box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+    animation: anim-ramka-1 20s infinite;
+    font-size: 24px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  @keyframes anim-ramka-1 {
+    0% {
+      border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+      box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    25% {
+      border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
+    }
+
+    50% {
+      border-radius: 50% 50% 33% 67%/55% 27% 73% 45%;
+      box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    75% {
+      border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
+    }
+  }
+
+  .links {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .icon {
+    width: 30px;
+  }
+
+  .codewars-icon {
+    max-height: 30px;
+  }
+
+  .tech-stack{
+    display: flex;
+    align-items: center;
+    margin-right: 240px;
+
+    &__icons {
+        display: flex;
+        gap: 10px;
+        margin-left: 10px;
+     }
+    
+      &__icon {
+        width: 50px;
+      }
+    
+      .angular{
+        width: 55px;
+      }
+
+      &__title{
+        font-family: Aeonik-Bold;
+        margin-right: 10px;
+      }
+  }
+
+ 
+}

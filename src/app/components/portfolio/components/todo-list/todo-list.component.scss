@@ -1,0 +1,58 @@
+:host {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .main {
+      display: flex;
+      gap: 10px;
+
+      .delete-btn {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+      }
+    }
+
+    .block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 250px;
+      height: fit-content;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 5px 20px;
+      color: black;
+
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .header {
+      justify-content: center;
+    }
+
+    .input,
+    .input:focus {
+      border: none;
+      outline: none;
+    }
+
+    .footer {
+      .filter {
+        cursor: pointer;
+      }
+    }
+
+    .filter.active {
+      color: red;
+    }
+
+    .counter{
+        margin-right: 5px;
+    }
+  }
+}
+
