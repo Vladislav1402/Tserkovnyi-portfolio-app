@@ -43,8 +43,9 @@ export class Header {
 
     headerButtons: headerButton[] = [
         { name: "header-main", link: 'main' },
-        { name: "header-items", link: 'items' },
-        { name: "header-portfolio", link: 'portfolio' }
+        { name: "header-portfolio", link: 'portfolio' },
+        { name: "header-contacts", link: 'contacts' },
+        
     ];
 
     constructor(

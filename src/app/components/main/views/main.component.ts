@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
     standalone:true,
+    imports: [TranslateModule]
 })
 
 export class Main implements OnInit {

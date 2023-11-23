@@ -6,12 +6,12 @@
   }
 
   .language-menu-btn {
-    background-color: #1E1C30;
+    background-color: rgb(202, 198, 198);
     background-position: center;
     background-size: cover;
     border: none;
     cursor: pointer;
-    color: #fff;
+    color: #000;
     font-family: Aeonik-Medium;
     font-size: 14px;
     height: 50px;
@@ -20,13 +20,14 @@
     z-index: 4;
 
     &.open {
-      background-color: #4C4A75;
+      background-color: rgb(173, 167, 167);
     }
   }
 
   .language-menu__bg {
-    background-color: #4C4A75;
+    background-color: rgb(173, 167, 167);
     left: 60px;
+    color: #fff;
     opacity: 0;
     padding: 20px;
     position: absolute;
@@ -59,5 +60,9 @@
     opacity: 1;
     pointer-events: auto;
     transform: translate(352.5px, 0);
+  }
+
+  .icon{
+    width: 30px;
   }
 }

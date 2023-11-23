@@ -23,20 +23,21 @@ export class InterfaceLanguageMenu {
 
   constructor(
     public languageService: LanguageService,
-    // private userService: UserService
   ) {
-    //   this.languageService.code
-    //     .pipe(takeUntil(this.destroy$))
-    //     .subscribe((code) => {
-    //       this.current = code;
-    //     });
+  }
+
+  get langIcon() {
+    return this.current === 'en' 
+    ? '/assets/images/en.png'
+    : this.current === 'po'
+    ? '/assets/images/poland.png'
+    : '/assets/images/de.png'
   }
 
   onChanged(locale: Language) {
     this.isOpen = false;
     this.languageService.changeInterfaceLanguage(locale)
     this.current = locale
-    // this.userService.setProfileLanguage(locale).pipe(take(1)).subscribe();
   }
 
   handleOpen() {

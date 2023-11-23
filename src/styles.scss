@@ -5,6 +5,36 @@
     box-sizing: border-box;
 }
 
+// @font-face {
+//   font-family: "Aeonik-Medium";
+//   src: url("./assets/fonts/converted/Aeonik-Medium.otf");
+//   src: local("☺"), url("./assets/fonts/converted/Aeonik-Medium.woff") format("woff");
+//   font-weight: 500;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: "Aeonik-Regular";
+  src: url("./assets/fonts/converted/Aeonik-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Aeonik-Bold";
+  src: url("./assets/fonts/converted/Aeonik-Bold.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik-Medium";
+  src: url("./assets/fonts/converted/Aeonik-Medium.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;

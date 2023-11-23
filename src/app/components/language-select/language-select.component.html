@@ -4,6 +4,9 @@
         class="language-menu-btn"
         [ngClass]="{'open': isOpen }"
         (click)="handleOpen()">
+        <div>
+            <img class="icon" [src]="langIcon" alt="">
+        </div>
         {{current | titlecase}}
     </button>
 

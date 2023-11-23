@@ -1,6 +1,7 @@
 {
-    "hello": "hello",
     "header-main": "Main",
-    "header-items": "Items",
-    "header-portfolio": "Portfolio" 
+    "header-contacts": "Contacts",
+    "header-portfolio": "Portfolio",
+    "main-about__developer": "Developer",
+    "main-about__subtitle":  "Hi, I'm Vladislav Tserkovnyi. A passionate Front-end Angular Developer based in Poland, Lodz"
 }
