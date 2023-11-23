@@ -29,6 +29,7 @@ export class AppComponent {
     private languageService: LanguageService,
     private translate: TranslateService,
   ) {
+    translate.setDefaultLang('en');
     this.languageService.$selectedCurrentInterfaceLanguage
       .pipe(takeUntil(this.destroyed$))
       .subscribe(this.switchLanguage.bind(this));
