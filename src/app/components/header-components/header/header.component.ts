@@ -68,18 +68,19 @@ export class Header {
             btn.link === `${this.router.url.split("/")[1]}`
                 ? this.activeItem = index
                 : '')
-        this.setInitialState(this.activeItem);
+                setTimeout(() => {
+                    this.setInitialState(this.activeItem);
+                },100)
     }
 
     setInitialState(i: number) {
-        console.log('i', i);
         const activeElement = this.underline?.nativeElement;
         const activeItemElement = this.menuItemElements?.toArray()[i].nativeElement;
 
         setTimeout(() => {
             this.renderer?.setStyle(activeElement, 'left', activeItemElement?.offsetLeft + 'px');
             this.renderer?.setStyle(activeElement, 'width', activeItemElement?.offsetWidth + 'px');
-        }, 10);
+        }, 100);
     }
 
     activateItem(i: number) {
