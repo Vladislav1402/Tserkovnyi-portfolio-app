@@ -19,6 +19,10 @@
 
         &:first-child{
           margin-left: 200px;
+
+          @media screen and (max-width: 868px) {
+            margin-left: 20px;
+          }
         }
 
         &__active{

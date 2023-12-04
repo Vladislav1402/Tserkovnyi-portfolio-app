@@ -1,0 +1,23 @@
+<div class="gallery">
+    <div class="container__big">
+        <div class="gallery__buttons filter " id="gallery__buttons">
+            @for(button of collectionButtons;track $index){
+            <button
+                (click)="onChooseCollection(button.id)"
+                class="gallery__button  yellow bedroom "
+                [ngClass]="{'active': selectedCollection === button.id}">
+                {{button.label}}
+            </button>
+            }
+        </div>
+        <div class="gallery__iner">
+            <div class="gallery__images bedroom" [@fadeInOut]="selectedCollection">
+                @for(bed of furnitureCollection[selectedCollection]; track $index){
+                @if(bed.isMain){
+                <img [src]="bed.label" alt="img" class="gallery__img" [ngClass]="{'gallery': isGallery}">
+                }
+                }
+            </div>
+        </div>
+    </div>
+</div>

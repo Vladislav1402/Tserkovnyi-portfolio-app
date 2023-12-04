@@ -1,0 +1,136 @@
+<body>
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-wrapper">
+                    <!-- <button (click)="handleBack()" class="back-btn">
+                        Back
+                        <fa-icon
+                            class="icon"
+                            [icon]="faArrowLeft"></fa-icon>
+                    </button> -->
+                    <div class="header__menu">
+
+                        <div class="icon__menu" >
+                            <button class="icon__menu-button" (click)="isBurgerOpend = !isBurgerOpend">
+                                <img src="/assets/images/1 page/svg/icon_menu.svg" alt="">
+                            </button>
+                            <div class="icon__menu-wrapper" [ngClass]="{'open': isBurgerOpend}">
+                                <div (click)="isBurgerOpend = false">X</div>
+                                <ul class="icon__menu-list">
+                                    <li class="icon__menu-item">
+                                        <a class="icon__menu-link" 
+                                        routerLink="'/home/about'" 
+                                        >About</a>
+                                    </li>
+                                    <li class="icon__menu-item">
+                                        <a class="icon__menu-link" href="gallery.html">Gallery</a>
+                                    </li>
+                                    <li class="icon__menu-item">
+                                        <a class="icon__menu-link" href="blog.html">Blog</a>
+                                    </li>
+                                    <li class="icon__menu-item">
+                                        <a class="icon__menu-link" href="contact.html">Contact</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="header__menu-list">
+
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" [routerLinkActive]="'active'" [routerLink]="['/home/about']">About</a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" [routerLinkActive]="'active'" [routerLink]="['/home/gallery']">Gallery</a>
+                            </li>
+
+                        </ul>
+                        <div class="header__menu-logo">
+                            <img class="header__menu-img" src="/assets/images/logo.jpg" alt="">
+                        </div>
+                        <ul class="header__menu-list">
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" [routerLink]="['/home/blog']" [routerLinkActive]="'active'"
+                                >Blog</a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" [routerLink]="['/home/contacts']" [routerLinkActive]="'active'">Contact</a>
+                            </li>
+                        </ul>
+                        <button class="header__menu-button" (click)="toggleAside()">
+                            <img src="/assets/images/1 page/svg/icon_menu.svg" alt="">
+                        </button>
+
+                        <aside class="aside">
+                            <div class="aside__menu" [ngClass]="{'active': asideIsVisible}">
+                                <button class="aside__menu-button" (click)="toggleAside()">
+                                    <img src="/assets/images/1 page/svg/krest.svg" alt="">
+                                </button>
+                                <div class="aside__logo">
+                                    <img class="log-img" src="/assets/images/logo.jpg" alt="">
+                                </div>
+                                <h4 class="aside__title title">Furniture for life</h4>
+                                <p class="aside__text">Sustainable hot chicken skateboard, dreamcatcher meggings actually
+                                    squid. Slow-carb everyday carry +1 art party microdosing, put a bird on it brooklyn</p>
+                                <div class="aside__image">
+                                    <img src="/assets/images/1 page/chair-ai_1.webp" alt="">
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <router-outlet></router-outlet>
+        </main>
+
+        <footer class="footer">
+
+            <div class="footer__top">
+                <div class="container">
+                    <div class="footer__inner">
+                        <div class="footer__contacts">
+                            <div class="footer__contacts-title title">Contact Us</div>
+                            <div class="footer__contacts-text">Keffiyeh poutine etsy, paleo cray put a bird on it
+                                microdosing schlitz you probably occupy
+                            </div>
+                            <!-- <div class="footer__contacts-mail">
+                        ouremailaddress@email.com</div> -->
+                            <form class="footer__form">
+                                <input class="footer__form-input" type="text" placeholder="subscribe by email">
+                                <button class="footer__form-btn">Send</button>
+                            </form>
+                        </div>
+
+                        <ul class="footer__social">
+                            <li class="footer__social-item social-item__facebook">Facebook</li>
+                            <li class="footer__social-item social-item__Instagram">Instagram</li>
+                            <li class="footer__social-item social-item__Pinterest">Pinterest</li>
+                            <li class="footer__social-item social-item__WhatsApp">WhatsApp</li>
+                            <li class="footer__social-item social-item__Youtube">Youtube</li>
+                        </ul>
+                        <div class="footer__menu">
+                            <ul class="footer__menu-list">
+                                <li class="footer__menu-link"><a href="#">Delivery</a></li>
+                                <li class="footer__menu-link"><a href="#">FAQ</a></li>
+                                <li class="footer__menu-link"><a href="#">Help</a></li>
+                                <li class="footer__menu-link"><a href="#">More About Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="footer__copyright">
+                <p>674 Gonzales Drive. Washington, PA 15301</p>
+            </div>
+        </footer>
+    </div>
+</body>

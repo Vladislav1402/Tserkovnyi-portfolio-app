@@ -1,3 +1,4 @@
+import { furnitureRoutes } from './components/portfolio/components/furniture-app/furniture.routes';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -11,6 +12,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes), 
+    provideRouter(furnitureRoutes),
     provideAnimations(),
     importProvidersFrom(HttpClientModule), // or provideHttpClient() in Angular v15
    importProvidersFrom(TranslateModule.forRoot({

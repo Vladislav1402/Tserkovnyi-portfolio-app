@@ -1,0 +1,13 @@
+@import '../../furnitures-styles';
+
+:host {
+    .collection__image_2 {
+        @media screen and (max-width: 945px) {
+            margin-top: 90px;
+        }
+
+        @media screen and (max-width: 796px) {
+            margin-top: 108px;
+        }
+    }
+}

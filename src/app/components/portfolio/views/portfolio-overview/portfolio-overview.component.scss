@@ -3,7 +3,17 @@
         height: 100%;
         width: 100%;
         min-width: 1400px;
+     
     }
+
+    // .portfolio-list {
+    //     transform: translateX(-200%);
+    //     transition: all 600ms ease;
+
+    //     &.initialized{
+    //         transform: translateX(0);
+    //     }
+    // }
 
     .portfolio-items{
         font-size: 20px;

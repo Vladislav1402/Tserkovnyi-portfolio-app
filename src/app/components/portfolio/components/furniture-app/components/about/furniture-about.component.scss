@@ -1,0 +1,31 @@
+@import "../../furnitures-styles";
+
+:host {
+  .container__big {
+    max-width: 1868px;
+  }
+
+  .video__body {
+    position: relative;
+  }
+
+  .video-iframe {
+    padding: 40px;
+    background-color: rgb(188, 179, 179);
+    border-radius: 20px;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    margin-top: 170px;
+    width: fit-content;
+    height: 500px;
+    z-index: 9999;
+  }
+  .video-close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 201;
+  }
+   
+}
