@@ -41,8 +41,7 @@ export class TodoList {
         this.todos.map((todo) => {
             todo.id === id ? todo.isChecked = !todo.isChecked : ''
         })
-        console.log('todos', this.todos);
-        this.activeCounts = this.todos.filter(todo => todo.isChecked).length
+        this.getActiveCounts()
     }
 
     handleEnterEdit(id: string) {
@@ -50,7 +49,7 @@ export class TodoList {
             ? todo = { label: this._editedValue, id: todo.id, isEdit: false, isChecked: false }
             : todo
         )
-        this.activeCounts = this.todos.filter(todo => todo.isChecked).length
+        this.getActiveCounts()
         this._editedValue = '';
     }
 
@@ -59,8 +58,13 @@ export class TodoList {
         this._value = ''
     }
 
+    getActiveCounts() {
+        this.activeCounts = this.todos.filter(todo => todo.isChecked).length
+    }
+
     handleDelete(id: string) {
         this.todos = this.todos.filter(todo => todo.id !== id)
+        this.getActiveCounts()
     }
 
     filterdTodos(value: FilterEnum) {

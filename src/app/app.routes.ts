@@ -1,3 +1,4 @@
+import { furnitureRoutes } from './components/portfolio/components/furniture-app/furniture.routes';
 import { Contacts } from './components/contacts/contacts.component';
 import { RobotList } from './components/portfolio/components/robot-list/robot-list.component';
 import { Portfolio } from './components/portfolio/views/portfolio-overview/portfolio-overview.component';
@@ -36,6 +37,10 @@ export const routes: Routes = [
             {
                 path: 'portfolio/todo-list',
                 component: TodoList
+            },
+            {
+                path: 'portfolio/furniture-app',
+                children: furnitureRoutes
             },
             {
                 path: 'contacts',

@@ -27,6 +27,17 @@ import { headerButton } from '../../../types/header';
                 animate('200ms ease-in', style({ transform: 'translateX(-5px)' })),
                 animate('200ms ease-out', style({ transform: 'translateX(3px)' })),
             ]),
+            state('active', style({ transform: 'translateX(0)' })),
+            transition('active => *', [
+                animate('200ms ease-in', style({ transform: 'translateX(-20px)' })),
+                animate('200ms ease-out', style({ transform: 'translateX(20px)' })),
+                animate('200ms ease-in', style({ transform: 'translateX(-15px)' })),
+                animate('200ms ease-out', style({ transform: 'translateX(15px)' })),
+                animate('200ms ease-in', style({ transform: 'translateX(-10px)' })),
+                animate('200ms ease-out', style({ transform: 'translateX(10px)' })),
+                animate('200ms ease-in', style({ transform: 'translateX(-5px)' })),
+                animate('200ms ease-out', style({ transform: 'translateX(3px)' })),
+            ]),
         ])
     ],
     imports: [CommonModule, TranslateModule, InterfaceLanguageMenu]

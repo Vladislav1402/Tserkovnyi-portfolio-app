@@ -1,0 +1,10 @@
+@import '../../furnitures-styles';
+
+:host{
+    .forms__name{
+        @media screen and (max-width: 921px) {
+         margin-bottom: 10px;
+        }
+    }
+
+}
