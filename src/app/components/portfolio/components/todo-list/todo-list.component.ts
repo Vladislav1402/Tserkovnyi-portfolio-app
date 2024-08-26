@@ -33,8 +33,16 @@ export class TodoList {
     }
 
     handleEdit(id: string) {
-        this.inputToEdit?.nativeElement.focus()
-        this.todos.map((todo) => todo.id === id ? todo.isEdit = true : '')
+       
+        const todo = this.todos.find(todo => todo.id === id)
+        this._editedValue = todo ? todo.label : ''
+        this.todos.map((todo, i) => {
+            todo.id === id ? (todo.isEdit = true) && (this._editedValue = todo.label) : todo.isEdit = false;
+        })
+
+        setTimeout(() => {
+            this.inputToEdit?.nativeElement.focus()
+        });
     }
 
     toggleTodo(id: string) {

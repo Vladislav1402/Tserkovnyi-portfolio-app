@@ -3,14 +3,16 @@
     height: 100vh;
     width: 100vw;
     overflow: auto;
+    overflow-x: clip;
     display: flex;
     flex-direction: column;
+    
   }
   .content {
     margin: auto;
     height: calc(100% - 50px);
     padding: 40px;
-    max-width: 1230px;
+    // max-width: 1230px;
     width: 100%;
   }
 }

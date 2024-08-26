@@ -1,0 +1,17 @@
+<div class="card" [ngClass]="{'card__basket': isBasket}">
+    <img class="card__img" [src]="sneaker.img" alt="">
+    <div class="card__description">{{sneaker.lable}}</div>
+    <div class="card__info">
+        <div class="card__info-price price">
+            <div class="price__title">Price:</div>
+            <div class="price__amount">{{sneaker.price}}$</div>
+        </div>
+        @if(!isBasket){
+            <button class="card__btn" (click)="handleAddToBasket(sneaker)">+</button>
+        } @else {
+            <button class="card__btn delete" (click)="handleDeleteFromBasket()">X</button>
+        }
+        
+    </div>
+    <img class="card__like" src="/assets/images/snickers/heart-1.png" alt="">
+</div>

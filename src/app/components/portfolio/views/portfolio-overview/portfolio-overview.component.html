@@ -1,9 +1,9 @@
 <div class="portfolio-wrapper" >
     <div class="portfolio-list" [@listAnimation]="portfolioList.length">
         @for(item of portfolioList;track $index) {
-        <div class="portfolio-items" >
-            <span>{{$index + 1}}. </span> 
-            <span class="label"  (click)="handleNavigate(item.link)">{{item.label}}</span>
+        <div class="portfolio-items" (mousemove)="updateGradient($event)" #items (click)="handleNavigate(item.link)">
+            <span class="number">{{$index + 1}}</span> 
+            <span class="label">{{item.label}}</span>
         </div>
         }
     </div>

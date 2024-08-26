@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <h1>Minesweeper</h1>
+    <div>Flags: {{flagsCount}}</div>
+    <button (click)="resetGame()">Restart Game</button>
+    <div id="board">
+        @for(row of gameBoard;track i; let i = $index){
+        @for(cell of row;let j = $index; track j){
+        <div
+            (contextmenu)="handleRightClick($event,i,j)"
+            class="cell"
+            [class.hidden]="cell.isHidden"
+            [ngClass]="getMineClass(i,j)"
+            [class.revealed]="cell.isRevealed"
+            (click)="revealCell(i, j)">
+            @if(!cell.isMine){
+            {{ countAdjacentMines(i, j) }}
+            }  @else if(cell.isMine && !cell.isHidden && cell.isChoosenMine) {
+                <img src="/assets/images/red-bomb.png" alt="">
+            } @else if(cell.isMine && !cell.isHidden && !cell.isChoosenMine){
+                <img src="/assets/images/mine-gray.png" alt="">
+            } 
+            @if (cell.isFlag && cell.isHidden){
+                <fa-icon class="icon" [icon]="faFlag"></fa-icon>
+            }
+        </div>
+        }
+        }
+
+    </div>
+</div>
