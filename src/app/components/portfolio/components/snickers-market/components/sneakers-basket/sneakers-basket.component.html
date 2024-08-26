@@ -1,0 +1,35 @@
+@if(opened) {
+<div class="modal-overlay" (click)="closeModal()"></div>
+}
+
+<div class="wrapper" [ngClass]="{'wrapper__opened': opened}">
+    <div class="basket-container">
+        <span class="basket-title">Basket</span>
+        <div>You got 10% discount</div>
+        <div class="discount">
+            <input (change)="handleClickDiscount()"  type="checkbox" [(ngModel)]="_value"><span>Use discount</span>
+        </div>
+        
+        <div class="basket-cards">
+            @for(sneaker of basket$ | async;track sneaker){
+                <div @basketIn>
+                <app-sneakers-card
+                class='sn-card'
+                [sneaker]="sneaker"
+                [isBasket]="true"
+                (onDeleteFromBasket)="handleDeleteSneaker(sneaker.id)"></app-sneakers-card>
+            <div  class="basket-actions">
+                <span (click)="handleMinusSneaker(sneaker.id)">-</span>
+                <div>{{sneaker.quantity}}</div>
+                <span (click)="handleAddToBasket(sneaker)">+</span>
+                <div class="basket-cards__total-price">
+                    {{getSnickerTotalPrice(sneaker)}} $
+                </div>
+            </div>
+        </div>
+            }
+        </div>
+
+        <div class="basket-price">Total price: {{totalPrice}} $</div>
+    </div>
+</div>

@@ -39,8 +39,6 @@ export class RandomColors {
                       isLocked : col.isLocked ? col.isLocked : false
                     }
                   });
-            
-                console.log('colors', this.colors);
         } else {
             for (let i = 0; i < 6; i++) {
                 this.colors.push({ label: this.generateRandomColor(), isLocked: false });

@@ -3,27 +3,58 @@
         height: 100%;
         width: 100%;
         min-width: 1400px;
+        // background: linear-gradient(90deg, #131417, #2f313a 35% 65%, #131417);
+    }
+
+    .portfolio-list {
      
     }
 
-    // .portfolio-list {
-    //     transform: translateX(-200%);
-    //     transition: all 600ms ease;
-
-    //     &.initialized{
-    //         transform: translateX(0);
-    //     }
-    // }
+    .number {
+        position: relative;
+        font-size: 30px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: bolder;
+        z-index: 2;
+    }
 
     .portfolio-items{
         font-size: 20px;
         font-weight: 700;
         font-family: sans-serif;
         cursor: pointer;
-        margin-bottom: 20px;
+        border-bottom: 1px solid black;
+        padding-block: 30px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .portfolio-items::before {
+        content: '';
+        // background: var(--gradient);
+        background: linear-gradient(90deg, rgba(228,227,227,1) 0%, rgba(147,230,28,0.9360994397759104) var(--start-percent));
+        left: 0;
+        top: 0;
+        height: 100%;
+        position: absolute;
+        width: 0%;
+        z-index: 1;
+    }
+    
+    .portfolio-items:hover::before {
+       width: 100%;
+       transition: width 700ms ease;
+       z-index: 1;
+    }
+
+    .portfolio-items:first-child {
+        border-top: 1px solid black;
     }
 
     .label{
-        border-bottom: 1px solid black;
+        position: relative;
+        margin-left: 20px;
+        z-index: 2;
+       
     }
 }

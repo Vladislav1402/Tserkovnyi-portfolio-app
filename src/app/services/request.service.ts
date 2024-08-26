@@ -62,8 +62,6 @@ export class RequestService {
             }),
             catchError((error: any) => {
               this.loaderService.hideLoader();
-    
-              console.log(error);
             //   return this.globalErrorHandler.processGlobalErrors(error);
             return throwError(error)
             })

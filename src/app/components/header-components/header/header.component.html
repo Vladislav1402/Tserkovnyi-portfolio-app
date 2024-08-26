@@ -11,7 +11,7 @@
 
 
   @if(activeItem >= 0){
-  <div class="underline" #underline (@trembleAnimation.done)="handleDone()" [@trembleAnimation]="underlineState"></div>
+  <div class="underline" #underline (@trembleAnimation.start)="handleDone()" [@trembleAnimation]="underlineState"></div>
   }
   <app-interface-language-menu></app-interface-language-menu>
 </div>

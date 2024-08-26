@@ -1,0 +1,57 @@
+<div class="wrapper" [formGroup]="form">
+    <header class="header">
+        <div class="header-main">
+            <img class="header-main__logo" src="/assets/images/snickers/simple-colorful-sneakers-flat-shoes-logo-premium-vector.jpg" alt="">
+            <div class="header-main__text">
+                <div class="header-main__title">SneakerS Market</div>
+                <div class="header-main__subtitle">Best sneakers</div>
+            </div>
+        </div>
+        <app-sneakers-filter formControlName="filter"></app-sneakers-filter>
+
+        <div class="sort">
+            <div>Sort by</div>
+            <select formControlName="selectedSortOption" (change)="sortSneakers()">
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+                <option value="low-high">Price low to high</option>
+                <option value="high-low">Price high to low</option>
+            </select>
+        </div>
+
+        <div class="header-actions">
+            <div class="header-actions__basket header-actions__item"
+                (click)="handleToggleBasket()">
+                <img src="/assets/images/snickers/basket.svg" alt="">
+                <div>{{getCalculatedPrice() | currency}}</div>
+            </div>
+            <div class="header-actions__like header-actions__item">
+                <img src="/assets/images/snickers/like.svg" alt="">
+                <div>Bookmarks</div>
+            </div>
+            <div class="header-actions__avatar header-actions__item">
+                <img src="/assets/images/snickers/avatar.svg" alt="">
+                <div>Profile</div>
+            </div>
+        </div>
+        <app-sneakers-basket
+            (onDiscountClick)="handleDisckClick($event)"
+            (onCloseModal)="handleToggleBasket()"
+            (onAddToBasket)="handleAddToBasket($event)"
+            #basket
+            [totalPrice]="getCalculatedPrice()"
+            [opened]="basketOpened">
+        </app-sneakers-basket>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="main__content">
+                @for(sneaker of sneackers | filter: filterPipe;track sneaker.id){
+                <div class="sneaker-item " @filter [ngClass]="{'sort-animation': animationState}">
+                    <app-sneakers-card [sneaker]="sneaker" (onAddToBasket)="handleAddToBasket($event)"></app-sneakers-card>
+                </div>
+                }
+            </div>
+        </div>
+    </main>
+</div>
